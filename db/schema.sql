@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS blogotech_db;
+CREATE DATABASE blogotech_db;
