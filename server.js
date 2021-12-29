@@ -19,8 +19,8 @@ const sess = {
      })
 };
 // Views configuration
-const hbs = exphbs.create({ helpers });
-app.engine('handlebars', engine());
+const hbs = exphbs.create();
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 // Middleware configuration
 app.use(routes);
