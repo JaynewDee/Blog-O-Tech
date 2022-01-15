@@ -1,7 +1,9 @@
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
-
+body {
+  margin: 50px;
+}
 .no-button {
   background: none;
   border: none;

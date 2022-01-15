@@ -26,13 +26,10 @@ app.set('view engine', 'handlebars');
 app.use(routes);
 app.use(session(sess));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('*', (req, res) => {
-     res.render('layouts/main')
-})
 // Data sync and server start
 sequelize.sync({ force: false }).then(() => {
      app.listen(PORT, () => console.log(`Blog O'Tech listening on port ${PORT}`))
 })
+
