@@ -1,9 +1,29 @@
 const user = require('express').Router();
-const {User} = require('../../models')
+const { User } = require('../../models')
 
-// Create User
 user.get('/login', async (req, res) => {
     res.render('login')
+})
+
+// Create User
+
+user.post('/', async (req, res) => {
+  try {
+    const dbUserData = await User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.loggedIn = true;
+
+      res.status(200).json(dbUserData);
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 })
 
 // Login User
@@ -11,7 +31,7 @@ user.post('/login', async (req, res) => {
      try {
        const userData = await User.findOne({ where: { email: req.body.email}});
        console.log(userData)
-        console.log(req)
+
        if (!userData) {
          res.status(400)
          .json({ message: 'Incorrect email or password, please try again'});
@@ -34,7 +54,8 @@ user.post('/login', async (req, res) => {
      } catch (err) {
        res.status(400).json(err);
      }
-
 })
+
+
 
 module.exports = user;

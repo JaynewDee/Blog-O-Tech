@@ -11,7 +11,8 @@ const loginFormHandler = async (event) => {
     const response = await fetch('/api/user/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type' : 'application/json'}
+      headers: { 'Content-Type': 'application/json'},
+      mode: 'cors'
     });
     console.log(response)
     if (response.ok) {
@@ -19,6 +20,9 @@ const loginFormHandler = async (event) => {
     } else {
       alert(response.statusText);
     }
+  }
+  else {
+    alert('You must enter a valid username and password!')
   }
 };
 
@@ -37,7 +41,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/home');
     } else {
       alert(response.statusText);
     }

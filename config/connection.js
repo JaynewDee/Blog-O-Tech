@@ -15,13 +15,13 @@ if (process.env.JAWSDB_URL) {
     }
   );
 }
-(async function auth() {
-  try {
-    await sequelize.authenticate();
-    console.log('Database API connection successfully established.');
-  } catch (error) {
-    console.error('Unable to connect to the database:', error);
-  }
-}())
+// (async function auth() {
+//   try {
+//     await sequelize.authenticate();
+//     console.log('Database API connection successfully established.');
+//   } catch (error) {
+//     console.error('Unable to connect to the database:', error);
+//   }
+// }())
 
 module.exports = sequelize;
