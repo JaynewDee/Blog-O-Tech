@@ -4,8 +4,6 @@ const loginFormHandler = async (event) => {
   // Collect values from the login form
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
-  console.log(email);
-  console.log(password);
 
   if (email && password) {
 
@@ -15,7 +13,7 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type' : 'application/json'}
     });
-    
+    console.log(response)
     if (response.ok) {
       document.location.replace('/home')
     } else {
