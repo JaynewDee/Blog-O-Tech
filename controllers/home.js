@@ -4,7 +4,7 @@ const userAuth = require('../utilities/authorization');
 
 home.get('/', async (req, res) => {
      try {
-
+          res.render('home')
      }
      catch (err){
           res.status(500).json(err)
