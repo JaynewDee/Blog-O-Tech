@@ -33,12 +33,12 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector('#password-signup').value.trim();
 
   if (name && email && password) {
-    const response = await fetch('/api/user/', {
+    const response = await fetch('/api/user', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+console.log(response)
     if (response.ok) {
       document.location.replace('/home');
     } else {

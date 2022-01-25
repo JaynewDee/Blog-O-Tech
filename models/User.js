@@ -2,7 +2,6 @@ const {
      Model,
      DataTypes
 } = require('sequelize');
-const {Post} = require('./Post')
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection')
 

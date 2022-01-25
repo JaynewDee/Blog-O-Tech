@@ -8,6 +8,3 @@ router.use('/home', homeRoutes)
 
 module.exports = router;
 
-router.get('/', (req, res) => {
-   document.location.replace('/home')
-})

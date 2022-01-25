@@ -12,7 +12,11 @@ const PORT = process.env.PORT || 3001;
 // Session configuration
 const sess = {
      secret: 'syntheticrain',
-     cookie: {},
+     cookie: {
+        maxAge: 3600000,
+        httpOnly: true,
+        secure: false,
+     },
      resave: false,
      saveUninitialized: true,
      store: new SequelizeStore({
@@ -32,7 +36,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 // Data sync and server start
 app.use(routes);
-sequelize.sync({ alter: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
      app.listen(PORT, () => console.log(`Blog O'Tech listening on port ${PORT}`))
 });
+
+app.get('/', (req, res) => {
+   res.redirect('/home')
+})
 
