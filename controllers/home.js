@@ -22,4 +22,9 @@ home.get('/', async (req, res) => {
      
 })
 
+home.get('/:id', (req, res) => {
+   const userData = await User.findOne({
+      
+   })
+})
 module.exports = home;

@@ -4,6 +4,10 @@ const apiRoutes = require('./api');
 const homeRoutes = require('./home')
 
 router.use('/api', apiRoutes);
-router.use('/', homeRoutes)
+router.use('/home', homeRoutes)
 
 module.exports = router;
+
+router.get('/', (req, res) => {
+   document.location.replace('/home')
+})
