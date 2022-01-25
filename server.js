@@ -32,7 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 // Data sync and server start
 app.use(routes);
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ alter: true }).then(() => {
      app.listen(PORT, () => console.log(`Blog O'Tech listening on port ${PORT}`))
 });
 

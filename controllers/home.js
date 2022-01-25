@@ -1,14 +1,25 @@
 const home = require('express').Router();
 const { User, Post } = require('../models');
-const userAuth = require('../utilities/authorization');
+
 
 home.get('/', async (req, res) => {
-     try {
-          res.render('home')
-     }
-     catch (err){
-          res.status(500).json(err)
-     }
+   const postData = await Post.findAll({
+      include: [
+         {
+            model: User,
+            attributes: ['name', 'email']
+         }
+      ]
+   })
+
+   const posts = postData.map((post) => post.get({ plain: true}))
+
+   res.render('home', {
+      posts,
+      logged_in: req.session.logged_in
+   })
+     
+     
 })
 
 module.exports = home;

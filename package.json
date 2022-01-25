@@ -28,6 +28,6 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
     "rona": "^1.0.9",
-    "sequelize": "^6.12.2"
+    "sequelize": "^6.3.5"
   }
 }
