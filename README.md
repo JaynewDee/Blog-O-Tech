@@ -1,11 +1,14 @@
-#   📓 Blog-O-Tech 📓
+#   🧑‍💻 Blog-O-Tech 🧑‍💻
 
-### A simple, central hub for posting tech-related musings  
+### A simple central hub for communing with techies 
+<br />  
+
 > **||Blog-O-Tech||** 
-<br>  
+  
+<br />  
 
-## *DESCRIPTION* 
-> 
+### *DESCRIPTION* 
+> Built with the tech-savvy and knowledge-hungry in mind, Blog-O-Tech is a discussion board for all things tech-related.
 >  
 >>>  ![license](https://img.shields.io/static/v1?label=License&message=MIT&color=blue)
 ___  
@@ -24,19 +27,32 @@ ___
 ___
 >  ### **USAGE**
 >>>  *Entering the discussion* <br>
->>>>  - 
+>>>>  - The user enters personal credentials to securely create an account.
+>>>>  - The user who has already created an account  enters their email and password to login to the application.  
+>>>>  - Once securely logged in, the user is presented with the homepage which includes posts made by any and all users previously.  
+>>>>  - The user may click on the profile link to be taken to a page with information and posts unique to the user's account.
+>>>>  - At the home page, the user clicks the "create new post" button to be presented with a form page for a new blog post.  The user enters a name and body for the post and clicks submit, and the user's post is populated onto the homepage along with the posts of all other users.
 ___  
 ___
 ___  
 > - ### **FEATURES**
->>>  *Under the Hood* <br>
->>>> - 
+>>>  *(Under the Hood)* <br>
+>>>  *Built using Model-View-Controller design architecture, this application makes use of the following technologies:*
+>>>> - Uses bcrypt npm package to hash passwords and enable authenticated sessions to protect user credentials.
+>>>> - Uses Express.js to engineer controllers to manage communication between front and back end.
+>>>> - Uses Sequelize Object-Relational-Mapping package through Node.js to model database objects transported by Express.  
+>>>> - Uses Handlebars.js through NPM to render views with dynamic data.
 ___  
 ___
 ___  
 >  ### **SCREENSHOTS**
 >>>  *Check it out* <br>
->>>>  
+>>>>  ![Signup Page](./assets/README-imgs/signup.png)
+___  
+>>>>  ![Home Page](./assets/README-imgs/homepage.png)
+___  
+>>>>  ![New Post](./assets/README-imgs/newpost.png)
+
 ___  
 ___
 ___  
@@ -49,7 +65,7 @@ ___
 ___  
 > - ### **LIVE**
 >>>  *The App in its natural state* <br>
->>>>  [Blog-O-Tech Deployed]()
+>>>>  [Blog-O-Tech Deployed](https://glacial-sands-70721.herokuapp.com/)
 ___  
 ___
 ___  

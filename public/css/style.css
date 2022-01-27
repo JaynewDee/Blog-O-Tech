@@ -26,3 +26,7 @@ h3 {
 #post-body {
    height: 200px;
 }
+
+#redirect-btn {
+   margin-bottom: 30px;
+}
