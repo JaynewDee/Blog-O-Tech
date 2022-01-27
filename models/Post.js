@@ -23,6 +23,7 @@ Post.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+   //  Associate the post with it's author through foreign key "user_id"
     user_id: {
       type: DataTypes.INTEGER,
       references: {

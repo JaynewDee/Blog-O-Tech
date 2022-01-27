@@ -1,3 +1,5 @@
+// Send post request to api/user/logout controller endpoint to check for an active session.
+// If session is alive, end it.
 const logout = async () => {
    const response = await fetch('/api/user/logout', {
       method: 'POST',
@@ -11,4 +13,7 @@ const logout = async () => {
   }
 };
 
+
+
+// Write front-end logic for sending post request for new blogpost
 document.querySelector('#logout').addEventListener('click', logout);

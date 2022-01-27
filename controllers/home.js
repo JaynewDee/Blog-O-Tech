@@ -2,6 +2,7 @@ const home = require('express').Router();
 const { User, Post } = require('../models');
 
 
+// If user is not logged in, redirect to login page. Else, populate all posts from all users on rendered 'home' view
 home.get('/', async (req, res) => {
    if(!req.session.logged_in) {
       res.redirect('/api/user/login')

@@ -1,3 +1,5 @@
+// Initialize refreshed database with User seed
+
 const sequelize = require('../config/connection');
 const { User } = require('../models');
 

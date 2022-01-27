@@ -4,6 +4,10 @@ header, .project:not(:last-child) {
 body {
   margin: 50px;
 }
+
+h3 {
+   margin-bottom: 50px;
+}
 .no-button {
   background: none;
   border: none;
@@ -19,8 +23,6 @@ body {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+#post-body {
+   height: 200px;
 }

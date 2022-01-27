@@ -3,12 +3,13 @@ const {
    User
 } = require('../../models')
 
+
+// Render login view at api/user/login
 user.get('/login', async (req, res) => {
    res.render('login')
 })
 
-// Create User
-
+// Use User sequelize model to add new user object to database
 user.post('/', async (req, res) => {
    try {
       const userData = await User.create({
@@ -28,7 +29,7 @@ user.post('/', async (req, res) => {
    }
 })
 
-// Login User
+// Verify hashed bcrypt password, login and begin new authenticated session
 user.post('/login', async (req, res) => {
    try {
       const userData = await User.findOne({
@@ -67,6 +68,7 @@ user.post('/login', async (req, res) => {
    }
 })
 
+// Logout user, end authenticated session
 user.post('/logout', (req, res) => {
    if (req.session.logged_in) {
       req.session.destroy(() => {

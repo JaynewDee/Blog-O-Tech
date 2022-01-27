@@ -5,6 +5,7 @@ const {
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection')
 
+// Add authentication method to each User through prototype
 class User extends Model {
      checkPassword(loginPw) {
           return bcrypt.compareSync(loginPw, this.password);
@@ -34,10 +35,11 @@ User.init({
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
-               len: [4],
+               len: [6],
           },
      },
 }, {
+   // Sequelize hooks define authentication logic to run before user data is modified
      hooks: {
           async beforeCreate(newUserData) {
                newUserData.password = await bcrypt.hash(newUserData.password, 10);
